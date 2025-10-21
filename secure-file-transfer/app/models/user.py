@@ -17,4 +17,4 @@ class User(Base):
 
     otp_secret = Column(String, nullable=True)  # <--- Add this line for 2FA
 
-    files = relationship("File", back_populates="owner")
+    files = relationship("File", back_populates="owner", cascade="all, delete-orphan")

@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, synonym
 from app.core.db import Base
 from datetime import datetime
 
@@ -18,3 +18,6 @@ class File(Base):
 
     owner = relationship("User", back_populates="files")
     accesses = relationship("Access", back_populates="file")
+
+    # Backwards-compat alias for tests or legacy code expecting `encrypted_path`
+    encrypted_path = synonym("stored_filename")

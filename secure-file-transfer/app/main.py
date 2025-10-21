@@ -5,7 +5,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 from .core.config import settings
 from app.routes.health import router as health_router
-from app.api.v1 import auth
+from app.api.v1 import auth, files
 
 
 app = FastAPI(title=settings.APP_NAME)
@@ -28,3 +28,4 @@ async def health():
 app.include_router(health_router, prefix="/api/v1")
 
 app.include_router(auth.router)
+app.include_router(files.router)
