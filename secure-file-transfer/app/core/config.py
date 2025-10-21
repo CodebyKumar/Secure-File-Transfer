@@ -1,10 +1,10 @@
 # app/core/config.py
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import AnyUrl
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
-    
+
     APP_NAME: str = "secure-file-transfer"
     ENV: str = "development"
     HOST: str = "127.0.0.1"
@@ -21,5 +21,6 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
+
 
 settings = Settings()

@@ -18,6 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/healthz")
 async def health():
     return {"status": "ok", "env": settings.ENV}
