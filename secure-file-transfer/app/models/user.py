@@ -15,4 +15,6 @@ class User(Base):
     is_superuser = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
+    otp_secret = Column(String, nullable=True)  # <--- Add this line for 2FA
+
     files = relationship("File", back_populates="owner")

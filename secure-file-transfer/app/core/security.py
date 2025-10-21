@@ -12,8 +12,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str) -> str:
     """Hash the given password using bcrypt."""
-    password = password[:72]  # bcrypt safe limit
-    return pwd_context.hash(password)
+    truncated_password = password[:72]
+    return pwd_context.hash(truncated_password)
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
