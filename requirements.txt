@@ -1,0 +1,46 @@
+# Core Framework
+fastapi[standard]
+python-multipart
+
+# Database
+SQLAlchemy
+psycopg2-binary
+alembic
+
+# Authentication & Security
+python-jose[cryptography]
+passlib[bcrypt]
+pyotp
+qrcode[pil]
+
+# Encryption
+cryptography
+
+# Object Storage
+minio
+
+# Configuration
+pydantic
+pydantic-settings
+python-dotenv
+
+# Email validation
+email-validator
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Development
+black
+isort
+flake8
+mypy
+
+# Redis (optional for caching/sessions)
+redis
+hiredis
+
+# Monitoring (optional)
+prometheus-client
